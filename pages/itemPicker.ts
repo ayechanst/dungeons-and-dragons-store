@@ -1,12 +1,10 @@
-// import { generalStore } from './items';
+import { generalStore } from './items';
 
-function RandomPicker(numberOfItems) {
+export function RandomPicker(numberOfItems: number) {
   const arrayOfNumbers = [];
   for (let i = 0; i < numberOfItems; i++) {
-    let randomNumber = Math.floor(Math.random() * 4);
+    let randomNumber = Math.floor(Math.random() * generalStore.length);
     arrayOfNumbers.push(randomNumber);
   }
   return arrayOfNumbers;
 }
-
-console.log(RandomPicker(4));
