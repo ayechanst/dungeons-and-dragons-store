@@ -5,6 +5,7 @@ interface StoreItem {
   product: string;
   quantity: number;
   price: string;
+  weight: string;
   description: string;
 }
 
@@ -28,6 +29,8 @@ export default function MakeItem({ item }: MakeItemProps) {
         <button onClick={handleClick}>Purchase</button>
       </div>
       <p>{item.price}</p>
+      <p>{item.weight}</p>
+
       <div>{item.description}</div>
     </div>
   );

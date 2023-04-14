@@ -7,7 +7,8 @@ export default function Store() {
   const [items, setItems] = useState<Array<number>>();
 
   function handleClick() {
-    let randomNumbers = randomPicker(4);
+    let randomNumbers = randomPicker(3);
+    // argument to randomPicker will be sizeOfStore later
 
     setItems(randomNumbers);
   }
