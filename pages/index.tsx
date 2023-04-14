@@ -1,7 +1,7 @@
 import MakeItem from '@/components/MakeItem';
 import { useState } from 'react';
 import { randomPicker } from '../library/helpers';
-import { generalStore } from '../library/items';
+import { gear } from '../library/items';
 
 export default function Store() {
   const [items, setItems] = useState<Array<number>>();
@@ -17,7 +17,7 @@ export default function Store() {
       <button onClick={handleClick}>Generate Store</button>
       {items &&
         items.map((item) => {
-          let newItem = generalStore[item];
+          let newItem = gear[item];
           return <MakeItem item={newItem} />;
         })}
     </div>

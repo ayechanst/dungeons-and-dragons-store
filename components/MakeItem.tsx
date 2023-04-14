@@ -1,3 +1,4 @@
+import { restock } from '@/library/helpers';
 import { useState } from 'react';
 
 interface StoreItem {
@@ -12,6 +13,7 @@ interface MakeItemProps {
 }
 
 export default function MakeItem({ item }: MakeItemProps) {
+  const [stock, setStock] = useState(item);
   const [quantity, setQuantity] = useState(item.quantity);
 
   function handleClick() {
