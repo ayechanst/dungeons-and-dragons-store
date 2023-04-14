@@ -5,6 +5,7 @@ import { generalStore } from '../library/items';
 
 export default function Store() {
   const [items, setItems] = useState<Array<number>>();
+
   function handleClick() {
     let randomNumbers = randomPicker(4);
 
