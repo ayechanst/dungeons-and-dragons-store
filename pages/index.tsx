@@ -1,27 +1,24 @@
+import MakeItem from '@/components/MakeItem';
 import { useState } from 'react';
-import { RandomPicker } from '../library/itemPicker';
+import { randomPicker } from '../library/helpers';
 import { generalStore } from '../library/items';
 
 export default function Store() {
+  const [items, setItems] = useState<Array<number>>();
   function handleClick() {
-    let randomNumbers = RandomPicker(4);
-    console.log(randomNumbers);
-  }
+    let randomNumbers = randomPicker(4);
 
-  function Item() {
-    let item = generalStore[3];
-
-    return (
-      <div>
-        <h4>{item.product}</h4>
-        <p>{item.price}</p>
-        <div>{item.description}</div>
-      </div>
-    );
+    setItems(randomNumbers);
   }
 
   return (
-    <button onClick={handleClick}>Generate Store</button>
-    // this should return a number of items
+    <div>
+      <button onClick={handleClick}>Generate Store</button>
+      {items &&
+        items.map((item) => {
+          let newItem = generalStore[item];
+          return <MakeItem item={newItem} />;
+        })}
+    </div>
   );
 }
