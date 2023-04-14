@@ -23,7 +23,7 @@ export default function MakeItem({ item }: MakeItemProps) {
 
   return (
     <div>
-      <h4>{item.product}</h4>
+      <div>{item.product}</div>
       <div>
         <div>In stock: {item.quantity}</div>
         <button onClick={handleClick}>Purchase</button>

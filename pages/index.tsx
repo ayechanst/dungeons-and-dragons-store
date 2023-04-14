@@ -15,7 +15,11 @@ export default function Store() {
 
   return (
     <div>
-      <button onClick={handleClick}>Generate Store</button>
+      <button onClick={handleClick} className='text-red-500'>
+        Generate Small Store
+      </button>
+      <button onClick={handleClick}>Generate Medium Store</button>
+      <button onClick={handleClick}>Generate Big Store</button>
       {items &&
         items.map((item) => {
           let newItem = gear[item];
