@@ -22,7 +22,8 @@ export default function Store() {
   }
 
   return (
-    <div>
+    // Whole body
+    <div className='bg-yellow-50'>
       <div className='flex gap-8'>
         <button
           onClick={handleSmallClick}
@@ -45,6 +46,7 @@ export default function Store() {
         >
           Generate Big Store
         </button>
+        <div className='text-2xl'>Dungeons and Dragons General Store</div>
       </div>
       <div className='font-extrabold'>Adveturing Gear</div>
       {items &&

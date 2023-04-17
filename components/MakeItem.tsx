@@ -22,7 +22,7 @@ export default function MakeItem({ item }: MakeItemProps) {
   }
 
   return (
-    <div>
+    <div className='border-black-50'>
       <div className='text-lg font-bold'>{item.product}</div>
       <div>In stock: {item.quantity}</div>
       <button
