@@ -22,7 +22,7 @@ export default function MakeItem({ item }: MakeItemProps) {
   }
 
   return (
-    <div className='bg-fixed'>
+    <div className='bg-fixed grid grid-row-5 m-3'>
       <div className='bg-parchment-pattern'>
         <div className='text-lg font-bold'>{item.product}</div>
         <div>In stock: {item.quantity}</div>
