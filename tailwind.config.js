@@ -3,7 +3,11 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'parchment-pattern': "url('/images/parchment.jpg')",
+      },
+    },
   },
   plugins: [],
 };
