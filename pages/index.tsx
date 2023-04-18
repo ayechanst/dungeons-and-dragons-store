@@ -26,7 +26,7 @@ export default function Store() {
       </div>
       <div className='grid grid-cols-3'>
         {/* This is where all the items will render */}
-        <AdveturingGear numOfItems={3} />
+        <AdveturingGear numOfItems={6} />
       </div>
     </div>
   );

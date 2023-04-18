@@ -29,8 +29,9 @@ export default function MakeItem({ item }: MakeItemProps) {
   return (
     <div className='bg-fixed m-3 w-212'>
       <div className='bg-parchment-pattern'>
-        <div className='text-lg font-bold'>{item.product}</div>
-        <div>In stock: {item.quantity}</div>
+        <div className='text-lg font-bold'>
+          {item.product} x {item.quantity}
+        </div>
         <div className='flex gap-5'>
           <button
             onClick={handleClick}
@@ -47,8 +48,8 @@ export default function MakeItem({ item }: MakeItemProps) {
             Show Info
           </button>
         </div>
-        <p>{item.price}</p>
-        <p>{item.weight}</p>
+        <p>Price: {item.price}</p>
+        <p>Weight: {item.weight}</p>
         {infoClick && <div>{item.description} </div>}
       </div>
     </div>

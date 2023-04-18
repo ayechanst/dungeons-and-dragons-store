@@ -7,6 +7,10 @@ export default function AddItemButton() {
     setShowForm(!showForm);
   }
 
+  function handleSubmit() {
+    console.log('the submit is being handled!');
+  }
+
   return (
     <div>
       <button
@@ -17,9 +21,26 @@ export default function AddItemButton() {
         Add an Item
       </button>
       {showForm && (
-        <form>
-          <div>yay this works</div>
-        </form>
+        <div className='fixed insert-0 z-50 flex items-center justify-center'>
+          <div className='bg-white w-1/2 rounded-lg shadow-lg p-8'>
+            <form onSubmit={handleSubmit}>
+              <label>Name</label>
+              <input
+                type='text'
+                name='name'
+                id='name'
+                placeholder='Item Name'
+              ></input>
+              <label>Weight</label>
+              <input
+                type='number'
+                name='weight'
+                id='weight'
+                placeholder='Item Weight'
+              ></input>
+            </form>
+          </div>
+        </div>
       )}
     </div>
   );
