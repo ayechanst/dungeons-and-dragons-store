@@ -3,7 +3,11 @@ import MakeItem from '@/components/MakeItem';
 import { randomPicker } from '../library/helpers';
 import { gear } from '../library/items';
 
-export default function AdveturingGear(numOfItems: number) {
+interface AdveturingGearProps {
+  numOfItems: number;
+}
+
+export default function AdveturingGear({ numOfItems }: AdveturingGearProps) {
   const [items, setItems] = useState<Array<number>>();
   useEffect(() => {
     let randomNumbers = randomPicker(numOfItems);

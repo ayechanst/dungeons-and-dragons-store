@@ -8,7 +8,7 @@ export default function Store() {
   const [items, setItems] = useState<Array<number>>();
 
   function handleClick() {
-    AdveturingGear(6);
+    console.log('click');
   }
 
   return (
@@ -24,7 +24,7 @@ export default function Store() {
         </button>
         <div className='text-2xl'>Dungeons and Dragons General Store</div>
       </div>
-      <AdveturingGear numOfItems={6} />
+      <AdveturingGear numOfItems={3} />
     </div>
   );
 }
