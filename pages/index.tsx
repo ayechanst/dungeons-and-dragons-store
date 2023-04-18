@@ -2,6 +2,7 @@ import MakeItem from '@/components/MakeItem';
 import { useState } from 'react';
 import { randomPicker } from '../library/helpers';
 import { gear } from '../library/items';
+import AdveturingGear from '@/components/MakeAdventuringGear';
 
 export default function Store() {
   const [items, setItems] = useState<Array<number>>();
@@ -49,11 +50,7 @@ export default function Store() {
         <div className='text-2xl'>Dungeons and Dragons General Store</div>
       </div>
       <div className='font-extrabold'>Adveturing Gear</div>
-      {items &&
-        items.map((item) => {
-          let newItem = gear[item];
-          return <MakeItem item={newItem} />;
-        })}
+      <AdveturingGear />
     </div>
   );
 }
