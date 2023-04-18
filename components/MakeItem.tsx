@@ -16,26 +16,40 @@ interface MakeItemProps {
 export default function MakeItem({ item }: MakeItemProps) {
   const [stock, setStock] = useState(item);
   const [quantity, setQuantity] = useState(item.quantity);
+  const [infoClick, setInfoClick] = useState(false);
 
   function handleClick() {
     setQuantity((item.quantity -= 1));
   }
 
+  function handleInfoClick() {
+    setInfoClick(!infoClick);
+  }
+
   return (
-    <div className='bg-fixed grid grid-row-5 m-3'>
+    <div className='bg-fixed m-3 w-212'>
       <div className='bg-parchment-pattern'>
         <div className='text-lg font-bold'>{item.product}</div>
         <div>In stock: {item.quantity}</div>
-        <button
-          onClick={handleClick}
-          className='middle none center rounded-lg bg-red-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
-          data-ripple-light='true'
-        >
-          Purchase
-        </button>
+        <div className='flex gap-5'>
+          <button
+            onClick={handleClick}
+            className='middle none center rounded-lg bg-red-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
+            data-ripple-light='true'
+          >
+            Purchase
+          </button>
+          <button
+            onClick={handleInfoClick}
+            className='middle none center rounded-lg bg-red-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
+            data-ripple-light='true'
+          >
+            Show Info
+          </button>
+        </div>
         <p>{item.price}</p>
         <p>{item.weight}</p>
-        <div>{item.description}</div>
+        {infoClick && <div>{item.description} </div>}
       </div>
     </div>
   );
