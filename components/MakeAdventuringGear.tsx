@@ -11,8 +11,8 @@ export default function AdveturingGear() {
   }, []);
 
   return (
-    <div className='font-extrabold'>
-      <div>Adventuring Gear</div>
+    <div>
+      <div className='font-extrabold'>Adventuring Gear</div>
       {items &&
         items.map((item) => {
           let newItem = gear[item];

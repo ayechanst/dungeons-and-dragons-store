@@ -1,12 +1,16 @@
 import { gear } from './items';
 
-export function randomPicker(numberOfItems: Number) {
-  const arrayOfNumbers = [];
-  for (let i = 0; i < numberOfItems; i++) {
+export function randomPicker(numberOfItems: number) {
+  const arrayOfNumbers: number[] = [];
+  while (arrayOfNumbers.length < numberOfItems) {
     let randomNumber = Math.floor(Math.random() * gear.length);
     // randomNumber is determined by the size of the store specically the availability
-    arrayOfNumbers.push(randomNumber);
+    if (!arrayOfNumbers.includes(randomNumber)) {
+      arrayOfNumbers.push(randomNumber);
+    }
   }
+
+  console.log(arrayOfNumbers);
   return arrayOfNumbers;
 }
 
