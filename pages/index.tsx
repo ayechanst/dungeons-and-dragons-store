@@ -1,8 +1,6 @@
-import MakeItem from '@/components/MakeItem';
 import { useState } from 'react';
-import { randomPicker } from '../library/helpers';
-import { gear } from '../library/items';
 import AdveturingGear from '@/components/MakeAdventuringGear';
+import AddItemButton from '@/components/AddItemButton';
 
 export default function Store() {
   const [items, setItems] = useState<Array<number>>();
@@ -23,6 +21,7 @@ export default function Store() {
           Generate Medium Store
         </button>
         <div className='text-2xl'>Dungeons and Dragons General Store</div>
+        <AddItemButton />
       </div>
       <AdveturingGear numOfItems={3} />
     </div>
