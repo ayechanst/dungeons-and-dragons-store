@@ -13,7 +13,6 @@ export default function AddItemButton({ onSubmit }: FormPopUpProps) {
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-
     console.log('the submit is being handled!');
   }
 
@@ -59,10 +58,18 @@ export default function AddItemButton({ onSubmit }: FormPopUpProps) {
                 placeholder='Item Description'
                 className='m-1 border border-grey-400 px-2 py-2 w-full rounded-lg'
               ></input>
-              <button type='submit'>Submit</button>
-              <button type='button' onClick={handleClick}>
-                Close
-              </button>
+              <select className='m-1' name='category' id='category'>
+                <option value='gear'>Gear</option>
+                <option value='weapon'>Weapon</option>
+                <option value='potion'>Potion</option>
+                <option value='food'>Food</option>
+              </select>
+              <div className='m-2 flex gap-2'>
+                <button type='submit'>Submit</button>
+                <button type='button' onClick={handleClick}>
+                  Close
+                </button>
+              </div>
             </form>
           </div>
         </div>
