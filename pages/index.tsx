@@ -6,7 +6,9 @@ export default function Store() {
   const [items, setItems] = useState<Array<number>>();
 
   function handleClick() {
-    console.log('click');
+    const numItems = 4;
+    const newItems = Array(numItems).fill(0);
+    setItems(newItems);
   }
 
   return (
@@ -30,7 +32,7 @@ export default function Store() {
       </div>
       <div className='grid grid-cols-3'>
         {/* This is where all the items will render */}
-        <AdveturingGear numOfItems={6} />
+        {items && <AdveturingGear numOfItems={items.length} />}
       </div>
     </div>
   );
