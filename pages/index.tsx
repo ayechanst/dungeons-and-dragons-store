@@ -22,7 +22,11 @@ export default function Store() {
           Generate Medium Store
         </button>
         <div className='text-2xl'>Dungeons and Dragons General Store</div>
-        <AddItemButton />
+        <AddItemButton
+          onSubmit={function (data: any): void {
+            throw new Error('Function not implemented.');
+          }}
+        />
       </div>
       <div className='grid grid-cols-3'>
         {/* This is where all the items will render */}

@@ -1,4 +1,4 @@
-import { gear } from './items';
+import { gear } from './gear';
 
 export function randomPicker(numberOfItems: number) {
   const arrayOfNumbers: number[] = [];

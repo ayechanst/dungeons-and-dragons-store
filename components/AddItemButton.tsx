@@ -12,8 +12,20 @@ export default function AddItemButton({ onSubmit }: FormPopUpProps) {
   }
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    const categorySelectElement = document.getElementById(
+      'category',
+    ) as HTMLInputElement;
+    const categorySelect = categorySelectElement
+      ? categorySelectElement.value
+      : '';
+    if (categorySelect === 'gear') {
+      console.log('do weapon shit');
+    } else if (categorySelect === 'food') {
+      console.log('do food shit');
+    } else {
+      console.log('this category does not have logic yet');
+    }
     event.preventDefault();
-    console.log('the submit is being handled!');
   }
 
   return (

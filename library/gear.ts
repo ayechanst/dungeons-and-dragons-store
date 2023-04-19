@@ -1,3 +1,24 @@
+class Gear {
+  quantity: number;
+  product: string;
+  price: string;
+  weight: string;
+  description: string;
+  constructor(
+    quantity: number,
+    product: string,
+    price: string,
+    weight: string,
+    description: string,
+  ) {
+    this.quantity = quantity;
+    this.product = product;
+    this.price = price;
+    this.weight = weight;
+    this.description = description;
+  }
+}
+
 export const gear = [
   {
     quantity: 0,
