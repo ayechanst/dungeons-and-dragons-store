@@ -14,18 +14,26 @@ export default function AddItemButton({ onSubmit }: FormPopUpProps) {
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const [
+      quantityInput,
+      productInput,
+      priceInput,
+      weightInput,
+      descriptionInput,
+    ] = [
+      (document.getElementById('quantity') as HTMLInputElement).valueAsNumber,
+      (document.getElementById('product') as HTMLInputElement).value,
+      (document.getElementById('price') as HTMLInputElement).value,
+      (document.getElementById('weight') as HTMLInputElement).value,
+      (document.getElementById('description') as HTMLInputElement).value,
+    ];
+
     const categorySelectElement = document.getElementById(
       'category',
     ) as HTMLInputElement;
     const categorySelect = categorySelectElement
       ? categorySelectElement.value
       : '';
-    const quantityInputElement = document.getElementById('quantity');
-    const quatityInput = quantityInputElement ? 
-    const productInput = document.getElementById('product').value;
-    const priceInput = document.getElementById('price');
-    const weightInput = document.getElementById('weight');
-    const descriptionInput = document.getElementById('description');
 
     if (categorySelect === 'gear') {
       const gear = new Gear(
@@ -59,8 +67,15 @@ export default function AddItemButton({ onSubmit }: FormPopUpProps) {
               <input
                 type='text'
                 name='name'
-                id='name'
+                id='product'
                 placeholder='Item Name'
+                className='m-1 border border-grey-400 px-2 py-2 w-full rounded-lg'
+              ></input>
+              <input
+                type='string'
+                name='price'
+                id='price'
+                placeholder='Item Price'
                 className='m-1 border border-grey-400 px-2 py-2 w-full rounded-lg'
               ></input>
               <input
