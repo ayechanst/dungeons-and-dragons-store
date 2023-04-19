@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Gear } from '../library/gear';
+import { Gear, gear } from '../library/gear';
 
 interface FormPopUpProps {
   onSubmit: (data: any) => void;
@@ -36,13 +36,15 @@ export default function AddItemButton({ onSubmit }: FormPopUpProps) {
       : '';
 
     if (categorySelect === 'gear') {
-      const gear = new Gear(
+      const newGear = new Gear(
         quantityInput,
         productInput,
         priceInput,
         weightInput,
         descriptionInput,
       );
+      gear.push(newGear);
+      console.log(gear);
     } else if (categorySelect === 'food') {
       console.log('do food shit');
     } else {
