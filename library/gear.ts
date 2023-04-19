@@ -1,4 +1,4 @@
-class Gear {
+export class Gear {
   quantity: number;
   product: string;
   price: string;

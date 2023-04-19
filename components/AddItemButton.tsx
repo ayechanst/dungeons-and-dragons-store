@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Gear } from '../library/gear';
 
 interface FormPopUpProps {
   onSubmit: (data: any) => void;
@@ -12,20 +13,33 @@ export default function AddItemButton({ onSubmit }: FormPopUpProps) {
   }
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
     const categorySelectElement = document.getElementById(
       'category',
     ) as HTMLInputElement;
     const categorySelect = categorySelectElement
       ? categorySelectElement.value
       : '';
+    const quantityInputElement = document.getElementById('quantity');
+    const quatityInput = quantityInputElement ? 
+    const productInput = document.getElementById('product').value;
+    const priceInput = document.getElementById('price');
+    const weightInput = document.getElementById('weight');
+    const descriptionInput = document.getElementById('description');
+
     if (categorySelect === 'gear') {
-      console.log('do weapon shit');
+      const gear = new Gear(
+        quantityInput,
+        productInput,
+        priceInput,
+        weightInput,
+        descriptionInput,
+      );
     } else if (categorySelect === 'food') {
       console.log('do food shit');
     } else {
       console.log('this category does not have logic yet');
     }
-    event.preventDefault();
   }
 
   return (
@@ -55,11 +69,12 @@ export default function AddItemButton({ onSubmit }: FormPopUpProps) {
                 id='weight'
                 placeholder='Item Weight'
                 className='m-1 border border-grey-400 px-2 py-2 w-full rounded-lg'
+                required
               ></input>
               <input
                 type='number'
-                name='stock'
-                id='stock'
+                name='quantity'
+                id='quantity'
                 placeholder='Average Quantity'
                 className='m-1 border border-grey-400 px-2 py-2 w-full rounded-lg'
               ></input>
