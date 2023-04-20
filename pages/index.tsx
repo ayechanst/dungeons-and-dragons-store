@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import AdveturingGear from '@/components/MakeAdventuringGear';
 import AddItemButton from '@/components/AddItemButton';
-import { randomPicker } from '@/library/helpers';
 
 export default function Store() {
   const [items, setItems] = useState<Array<number>>();
@@ -9,7 +8,7 @@ export default function Store() {
 
   function handleClick() {
     // left off here, probably a state issue
-    const numItems = Math.floor(Math.random() * 5);
+    const numItems = Math.floor(Math.random() * 5) + 1;
     setRandomNum(numItems);
     const newItems = Array(numItems).fill(randomNum);
     setItems(newItems);
