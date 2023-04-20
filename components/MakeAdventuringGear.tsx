@@ -12,7 +12,7 @@ export default function AdveturingGear({ numOfItems }: AdveturingGearProps) {
   useEffect(() => {
     let randomNumbers = randomPicker(numOfItems);
     setItems(randomNumbers);
-  }, []);
+  }, [numOfItems]);
 
   return (
     <div>

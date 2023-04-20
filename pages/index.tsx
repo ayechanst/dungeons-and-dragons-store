@@ -7,12 +7,8 @@ export default function Store() {
   const [randomNum, setRandomNum] = useState(0);
 
   function handleClick() {
-    // left off here, probably a state issue
     const numItems = Math.floor(Math.random() * 5) + 1;
     setRandomNum(numItems);
-    const newItems = Array(numItems).fill(randomNum);
-    setItems(newItems);
-    console.log('click');
   }
 
   return (
@@ -36,7 +32,7 @@ export default function Store() {
       </div>
       <div className='grid grid-cols-3'>
         {/* This is where all the items will render */}
-        {items && <AdveturingGear numOfItems={items.length} />}
+        {items && <AdveturingGear numOfItems={randomNum} />}
       </div>
     </div>
   );
