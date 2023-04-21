@@ -7,12 +7,6 @@ interface FormPopUpProps {
 
 export default function AddItemButton({ onSubmit }: FormPopUpProps) {
   const [showForm, setShowForm] = useState(false);
-  const [productName, setProductName] = useState('');
-
-  const handleName = (e: any) => {
-    setProductName(e.target.value);
-    console.log(productName);
-  };
 
   function handleClick() {
     setShowForm(!showForm);
@@ -73,8 +67,6 @@ export default function AddItemButton({ onSubmit }: FormPopUpProps) {
             <div className='bold flex justify-center m-4'>New Item Form</div>
             <form onSubmit={handleSubmit}>
               <input
-                onChange={handleName}
-                value={productName}
                 type='text'
                 name='name'
                 id='product'
