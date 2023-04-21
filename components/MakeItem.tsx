@@ -34,14 +34,14 @@ export default function MakeItem({ item }: MakeItemProps) {
         <div className='flex gap-5'>
           <button
             onClick={handlePurchase}
-            className='middle none center rounded-lg bg-red-500 py-1 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
+            className='bg-white hover:bg-grey-150 text-grey-600 py-1 px-1 border border-grey-900 rounded shadow text text-xs'
             data-ripple-light='true'
           >
             Purchase
           </button>
           <button
             onClick={handleInfoClick}
-            className='middle none center rounded-lg bg-red-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
+            className='bg-white hover:bg-grey-150 text-grey-600 py-1 px-1 border border-grey-900 rounded shadow text text-xs'
             data-ripple-light='true'
           >
             Show Info
