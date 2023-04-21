@@ -1,4 +1,3 @@
-import { restock } from '@/library/helpers';
 import { useState } from 'react';
 
 interface StoreItem {
@@ -18,7 +17,7 @@ export default function MakeItem({ item }: MakeItemProps) {
   const [quantity, setQuantity] = useState(item.quantity);
   const [infoClick, setInfoClick] = useState(false);
 
-  function handleClick() {
+  function handlePurchase() {
     setQuantity((item.quantity -= 1));
   }
 
@@ -28,14 +27,14 @@ export default function MakeItem({ item }: MakeItemProps) {
 
   return (
     <div className='bg-fixed m-3 w-212'>
-      <div className='bg-parchment-pattern'>
+      <div className='bg-parchment-pattern p-6 rounded-lg'>
         <div className='text-lg font-bold'>
           {item.product} x {item.quantity}
         </div>
         <div className='flex gap-5'>
           <button
-            onClick={handleClick}
-            className='middle none center rounded-lg bg-red-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
+            onClick={handlePurchase}
+            className='middle none center rounded-lg bg-red-500 py-1 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
             data-ripple-light='true'
           >
             Purchase
