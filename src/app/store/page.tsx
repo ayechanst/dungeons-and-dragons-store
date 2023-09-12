@@ -1,4 +1,5 @@
-import Store from "../../components/Store"
+import Store from "../components/Store"
+
 const StorePage = () => {
     return (
         <>
