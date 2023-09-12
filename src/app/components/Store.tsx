@@ -1,10 +1,11 @@
-import Item from "Item"
+import Item from "../components/Item"
 import React from "react"
-import items from "/items"
+import items from "../app/items"
 
 interface StoreProps {
     items: Array<{ name: string, description: string, price: string }>
 }
+
 
 const Store: React.FC<StoreProps> = ({ items }) => {
     return (
