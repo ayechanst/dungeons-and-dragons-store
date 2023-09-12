@@ -1,4 +1,12 @@
-export default function Item() {
+interface ItemProps {
+    item: {
+        name: string,
+        description: string,
+        price: string
+    }
+}
+
+export default function Item({ item }: ItemProps) {
     return (
         <>
             <div className="card w-96 bg-primary text-primary-content">
