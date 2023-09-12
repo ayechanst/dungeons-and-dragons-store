@@ -1,13 +1,18 @@
 async function getItems() {
-    const res = await fetch('http://localhost:4000/items')
-    return res.json()
+    const res = await fetch('http://localhost:4000/items');
+    return res.json();
 }
 
 export default async function ItemList() {
-    const items = await getItems()
+    const items = await getItems();
+
     return (
         <>
-
+            {items.map((item: any, index: any) => (
+                <div key={index}>
+                    {item.name}
+                </div>
+            ))}
         </>
-    )
+    );
 }
