@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from "react";
+import { useState } from "react";
 import { useRouter } from 'next/navigation'
 
 function AddItems() {
@@ -11,21 +11,17 @@ function AddItems() {
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
-
-        const item = {
-            itemName, itemDescription, itemPrice
-        }
-
+        const item = {itemName, itemDescription, itemPrice}
+        console.log(item);
         const res = await fetch('http://localhost:4000/items', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({item}),
+            body: JSON.stringify(item),
         })
-
+        console.log(res);
         if (res.status === 201) {
             router.refresh()
         }
-
     }
 
     return (
