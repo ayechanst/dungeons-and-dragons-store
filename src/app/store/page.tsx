@@ -1,10 +1,10 @@
-// import Store from "../components/Store"
-/* import type { NextPage } from "next"; */
-
-const Store = () => {
+import Store from "../../components/Store"
+const StorePage = () => {
     return (
-            <div>sup</div>
+        <>
+            <Store />
+        </>
     )
 }
 
-export default Store;
+export default StorePage;
