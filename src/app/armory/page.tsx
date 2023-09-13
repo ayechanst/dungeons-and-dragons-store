@@ -1,9 +1,11 @@
 import Store from "../components/Store"
 
+// this is the armory
 const StorePage = () => {
     return (
         <>
-            <Store />
+            <Store
+            storeType={"armory"}/>
             // make store take in params
         </>
     )

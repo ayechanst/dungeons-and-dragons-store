@@ -1,5 +1,6 @@
 import Store from "../components/Store"
 
+// inn page
 const StorePage = () => {
     return (
         <>

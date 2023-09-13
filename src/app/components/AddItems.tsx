@@ -9,6 +9,7 @@ function AddItems() {
     const [itemName, setItemName] = useState('');
     const [itemDescription, setItemDescription] = useState('');
     const [itemPrice, setItemPrice] = useState('');
+    const [itemCategory, setItemCategory] = useState('general');
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
@@ -16,14 +17,15 @@ function AddItems() {
         await addDoc(collection(db, 'items'), {
             name: itemName,
             description: itemDescription,
-            price: itemPrice
+            price: itemPrice,
+            category: itemCategory
         })
     }
 
     return (
         <>
             <button
-        className="btn"
+                className="btn"
         onClick={() => setAddItem(!addItem)}>
         Add Item
         </button>
@@ -55,6 +57,15 @@ function AddItems() {
                                 placeholder="price"
                                 className="input input-bordered w-full max-w-xs"
                                 onChange={e => setItemPrice(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="py-1">
+                                    {/* make this a dropdown */}
+                            <input
+                                placeholder="category"
+                                className="input input-bordered w-full max-w-xs"
+                                onChange={e => setItemCategory(e.target.value)}
                                 required
                             />
                         </div>

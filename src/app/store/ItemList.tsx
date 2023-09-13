@@ -8,9 +8,14 @@ interface ItemData {
     name: string;
     description: string;
     price: string;
+    category: string;
 }
 
-export default function ItemList() {
+interface StoreProps {
+    storeType: string;
+}
+
+function ItemList({ storeType }: StoreProps) {
     const [item, setItem] = useState<ItemData[]>([]);
 
     useEffect(() => {
@@ -25,12 +30,25 @@ export default function ItemList() {
         })
     }, []);
 
+    let itemsToDisplay: ItemData[] = [];
+
+    function filterItems(storeType: string) {
+        item.forEach((item) => {
+            if (item.category === storeType) {
+                itemsToDisplay.push(item);
+            } else {
+                console.log('error filtering items')
+            }
+        })
+    }
+    filterItems(storeType);
+
     return (
         <>
             <div style={{ backgroundImage: 'url(/store.jpg)' }}>
                 <div className="flex justify-center p-20">
                     <div className="grid m-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-4">
-                        {item.map((item: any, index: any) => (
+                        {itemsToDisplay.map((item: any, index: any) => (
                             <div key={index}>
                                 <Item
                                     item={item}
@@ -44,3 +62,5 @@ export default function ItemList() {
         </>
     );
 }
+
+export default ItemList;
