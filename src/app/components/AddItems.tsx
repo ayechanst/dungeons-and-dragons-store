@@ -1,27 +1,23 @@
 'use client'
 import { useState } from "react";
-import { useRouter } from 'next/navigation'
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../firebase"
 
 function AddItems() {
 
-    const router = useRouter();
     const [itemName, setItemName] = useState('');
     const [itemDescription, setItemDescription] = useState('');
     const [itemPrice, setItemPrice] = useState('');
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
-        const item = {itemName, itemDescription, itemPrice}
-        console.log(item);
-        const res = await fetch('http://localhost:4000/items', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(item),
+        console.log("its doing something")
+        await addDoc(collection(db, 'items'), {
+            name: itemName,
+            description: itemDescription,
+            price: itemPrice
         })
-        console.log(res);
-        if (res.status === 201) {
-            router.refresh()
-        }
+
     }
 
     return (
@@ -35,6 +31,7 @@ function AddItems() {
                                 placeholder="Item name"
                                 className="input input-bordered w-full max-w-xs"
                                 onChange={e => setItemName(e.target.value)}
+                                required
                             />
                         </div>
                         <div className="py-1">
@@ -42,6 +39,7 @@ function AddItems() {
                                 placeholder="Item description"
                                 className="input input-bordered w-full max-w-xs"
                                 onChange={e => setItemDescription(e.target.value)}
+                                required
                             />
                         </div>
                         <div className="py-1">
@@ -49,6 +47,7 @@ function AddItems() {
                                 placeholder="price"
                                 className="input input-bordered w-full max-w-xs"
                                 onChange={e => setItemPrice(e.target.value)}
+                                required
                             />
                         </div>
                         <div className="py-5">
