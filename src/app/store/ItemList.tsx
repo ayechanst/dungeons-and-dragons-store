@@ -21,7 +21,6 @@ export default function ItemList() {
                 itemsArray.push({ ...doc.data(), id: doc.id })
             })
             setItem(itemsArray);
-            // where is items array?
             return () => unsubscribe();
         })
     }, []);
@@ -29,8 +28,8 @@ export default function ItemList() {
     return (
         <>
             <div style={{ backgroundImage: 'url(/store.jpg)' }}>
-                <div className="flex justify-center py-20">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div className="flex justify-center p-20">
+                    <div className="grid m-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-4">
                         {item.map((item: any, index: any) => (
                             <div key={index}>
                                 <Item

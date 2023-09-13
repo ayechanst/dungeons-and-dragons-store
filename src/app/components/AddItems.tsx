@@ -5,6 +5,7 @@ import { db } from "../firebase"
 
 function AddItems() {
 
+    const [addItem, setAddItem] = useState(false);
     const [itemName, setItemName] = useState('');
     const [itemDescription, setItemDescription] = useState('');
     const [itemPrice, setItemPrice] = useState('');
@@ -21,7 +22,15 @@ function AddItems() {
 
     return (
         <>
-            <div className="card bg-neutral text-neutral-content m-3 w-96 bg-base-100 shadow-xl">
+            <button
+        className="btn"
+        onClick={() => setAddItem(!addItem)}>
+        Add Item
+        </button>
+
+            {addItem && (
+
+            <div className="card bg-neutral text-neutral-content m-10 w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="card-title">Add an item!</h2>
                     <form onSubmit={handleSubmit}>
@@ -57,6 +66,7 @@ function AddItems() {
                     </form>
                 </div>
             </div>
+            )}
 
         </>
     )

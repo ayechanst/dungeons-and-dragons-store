@@ -6,10 +6,12 @@ import AddItems from "./AddItems"
 function Store() {
     return (
         <>
-            <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
-                <AddItems />
-                <div className="col-span-1 sm:col-span-3 md:col-span-3 lg:col-span-3">
-                    <Nav />
+            <Nav />
+            <div className="grid grid-cols-1 md:grid-cols-4">
+                <div className="md:col-span-1">
+                    <AddItems />
+                </div>
+                <div className="md:col-span-3">
                     <ItemList />
                 </div>
             </div>
