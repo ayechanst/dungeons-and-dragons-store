@@ -15,11 +15,10 @@ function Store({storeType}: StoreProps) {
             <Nav storeType={storeType}/>
             <div className="grid grid-cols-1 md:grid-cols-4">
                 <div className="md:col-span-1">
-                    <AddItems storeType={storeType}/>
+                    <AddItems />
                 </div>
                 <div className="md:col-span-3">
                     <ItemList storeType={storeType}/>
-                    // send params here
                 </div>
             </div>
         </>

@@ -3,7 +3,9 @@ import Store from "../components/Store"
 const StorePage = () => {
     return (
         <>
-            <Store />
+            <Store
+            storeType={"general"}/>
+            // make store take in params
         </>
     )
 }
