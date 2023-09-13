@@ -6,7 +6,6 @@ const StorePage = () => {
         <>
             <Store
             storeType={"armory"}/>
-            // make store take in params
         </>
     )
 }

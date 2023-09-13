@@ -8,17 +8,17 @@ interface StoreProps {
     storeType: string;
 }
 
-function Store({storeType}: StoreProps) {
+function Store({ storeType }: StoreProps) {
 
     return (
         <>
-            <Nav storeType={storeType}/>
+            <Nav storeType={storeType} />
             <div className="grid grid-cols-1 md:grid-cols-4">
                 <div className="md:col-span-1">
                     <AddItems />
                 </div>
                 <div className="md:col-span-3">
-                    <ItemList storeType={storeType}/>
+                    <ItemList storeType={storeType} />
                 </div>
             </div>
         </>

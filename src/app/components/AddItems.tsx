@@ -22,6 +22,8 @@ function AddItems() {
         })
     }
 
+    const categoryOptions = ['general', 'armory', 'inn'];
+
     return (
         <>
             <button
@@ -63,12 +65,18 @@ function AddItems() {
                             </div>
                             <div className="py-1">
                                 {/* make this a dropdown */}
-                                <input
-                                    placeholder="category"
-                                    className="input input-bordered w-full max-w-xs"
-                                    onChange={e => setItemCategory(e.target.value)}
+                                <select
+                                    value={itemCategory}
+                                    onChange={(e) => setItemCategory(e.target.value)}
+                                    className="select select-bordered w-full max-w-xs"
                                     required
-                                />
+                                >
+                                    {categoryOptions.map((option, index) => (
+                                        <option key={index} value={option}>
+                                            {option}
+                                        </option>
+                                    ))}
+                                </select>
                             </div>
                             <div className="py-5">
                                 <button type="submit" className="btn">
