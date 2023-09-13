@@ -1,8 +1,15 @@
-function Nav() {
+
+
+interface StoreProps {
+    storeType: string;
+}
+
+function Nav({storeType}: StoreProps) {
+
     return (
         <>
             <div className="navbar bg-base-100 p-10 flex items-center justify-between">
-                <a className="btn btn-ghost normal-case text-6xl">General Store</a>
+                <a className="uppercase text-6xl">{storeType}</a>
             </div>
         </>
     )

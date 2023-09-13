@@ -13,7 +13,7 @@ function AddItems() {
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
-        console.log("its doing something")
+        setAddItem(!addItem);
         await addDoc(collection(db, 'items'), {
             name: itemName,
             description: itemDescription,
@@ -26,12 +26,12 @@ function AddItems() {
 
     return (
         <>
-            <button
-                className="btn"
-                onClick={() => setAddItem(!addItem)}
-            >
-                Add Item
-            </button>
+                <button
+                    className="btn m-5"
+                    onClick={() => setAddItem(!addItem)}
+                >
+                    Add Item
+                </button>
 
             {addItem && (
 
@@ -64,7 +64,6 @@ function AddItems() {
                                 />
                             </div>
                             <div className="py-1">
-                                {/* make this a dropdown */}
                                 <select
                                     value={itemCategory}
                                     onChange={(e) => setItemCategory(e.target.value)}

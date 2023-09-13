@@ -15,7 +15,6 @@ export default function Item({ item }: ItemProps) {
                     <p>{item.description}</p>
                     <p>{item.price}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn">Buy</button>
                     </div>
                 </div>
             </div>
