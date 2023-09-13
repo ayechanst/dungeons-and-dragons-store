@@ -1,14 +1,6 @@
-// 'use client'
-/* import { useRouter } from 'next/navigation'; */
 import Link from "next/link"
 
 export default function Hero() {
-    /* const router = useRouter();
-
-* function handleClick() {
-*     router.push("./store")
-* }
- */
 
     return (
         <>
@@ -20,11 +12,17 @@ export default function Hero() {
                         <p className="py-6">Choose what kind of store you like and awaaaayyyy we go!</p>
                         <div className="space-x-4">
                             <Link href="/store"
-                                className="btn btn-primary">
+                                  className="btn btn-primary">
                                 General Store
                             </Link>
-                            <button className="btn btn-primary">Armory</button>
-                            <button className="btn btn-primary">Inn/Tavern</button>
+                            <Link href="/armory"
+                                  className="btn btn-primary">
+                                Armory
+                            </Link>
+                            <Link href="/inn"
+                                  className="btn btn-primary">
+                                Inn/Tavern
+                            </Link>
                         </div>
                     </div>
                 </div>

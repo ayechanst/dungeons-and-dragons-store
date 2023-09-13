@@ -1,9 +1,11 @@
+'use client'
 import React from "react"
 import ItemList from "../store/ItemList"
 import Nav from "./Nav"
 import AddItems from "./AddItems"
 
 function Store() {
+
     return (
         <>
             <Nav />
@@ -13,6 +15,7 @@ function Store() {
                 </div>
                 <div className="md:col-span-3">
                     <ItemList />
+                    // send params here
                 </div>
             </div>
         </>
